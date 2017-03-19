@@ -11,6 +11,6 @@
 1. [爬虫学习之一个简单的网络爬虫](python/luoo.net)
 
 ### C++
-1. [tinyUT：模仿gtest实现的微型单元测试框架](cpp/tinyut/README.md)
-2. [DEEPBIND方式加载so问题简化模型](cpp/deepbind/README.md)
-2. [gdb自定制变量打印](cpp/gdb-pretty-print/README.md)
+1. [tinyUT：模仿gtest实现的微型单元测试框架](cpp/tinyut)
+2. [DEEPBIND方式加载so问题简化模型](cpp/deepbind)
+2. [gdb自定制变量打印](cpp/gdb-pretty-print)
