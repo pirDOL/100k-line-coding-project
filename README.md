@@ -10,6 +10,7 @@
 ### Python
 1. [爬虫学习之一个简单的网络爬虫](python/luoo.net)
 2. [定向爬虫 - Python模拟新浪微博登录](python/weibo.cn)
+3. [Python 爬虫-模拟登录知乎-爬取拉勾网职位信息](python/douban.com)
 
 ### C++
 1. [tinyUT：模仿gtest实现的微型单元测试框架](cpp/tinyut)
