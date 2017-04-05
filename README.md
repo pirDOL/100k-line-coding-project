@@ -15,4 +15,5 @@
 ### C++
 1. [tinyUT：模仿gtest实现的微型单元测试框架](cpp/tinyut)
 2. [DEEPBIND方式加载so问题简化模型](cpp/deepbind)
-2. [gdb自定制变量打印](cpp/gdb-pretty-print)
+3. [gdb自定制变量打印](cpp/gdb-pretty-print)
+4. [shared_ptr循环引用导致内存泄漏](cpp/shared-ptr-cyclic-reference-memory-leak)
