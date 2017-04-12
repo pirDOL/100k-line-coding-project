@@ -19,20 +19,17 @@ Python scripting is not supported in this copy of GDB.
 ```
 
 #### compile gdb with python support
-1. check python configure
+check whether python is configured with --enable-unicode=ucs4, if not compile python from source.
 ```
 >>> import distutils.sysconfig
 >>> print distutils.sysconfig.get_config_var('CONFIG_ARGS')
 '--prefix=/home/work/.jumbo' '--enable-shared' '--with-threads' '--enable-unicode=ucs4' '--with-system-expat' '--with-system-ffi' 'LDFLAGS=-L.   -Wl,-rpath=/home/work/.jumbo/lib -L/home/work/.jumbo/lib'
-```
 
-1. compile python enable-unicode=usc4
-```
 ./configure --enable-unicode=ucs4 --prefix=/home/work/python2.7/ucs4
 make && make install
 ```
 
-1. compile gdb with-python(note: explicit set python prefix in step2)
+compile gdb with-python, note explicitly set python prefix compiled above)
 ```
 ./configure --with-python=/home/work/python2.7/ucs4
 make
