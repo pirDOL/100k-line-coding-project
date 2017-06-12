@@ -12,6 +12,7 @@
 2. [定向爬虫 - Python模拟新浪微博登录](python/weibo.cn)
 3. [Python 爬虫-模拟登录知乎-爬取拉勾网职位信息](python/douban.com)
 4. [flask中logging使用](python/flask-logging)
+5. [python操作mysql](python/mysql)
 
 ### C++
 1. [tinyUT：模仿gtest实现的微型单元测试框架](cpp/tinyut)
@@ -21,3 +22,4 @@
 
 ### misc
 1. [source insight头文件/源文件切换](misc/source-insight-switch-hpp-cpp)
+2. [Golang timer guard](misc/golang-timer-guard)
