@@ -17,6 +17,7 @@
 3. [Python 爬虫-模拟登录知乎-爬取拉勾网职位信息](python/douban.com)
 4. [flask中logging使用](python/flask-logging)
 5. [python操作mysql](python/mysql)
+6. [python多进程、多线程、协程](python/multiprocessing-threading-coroutine)
 
 ### C++
 1. [tinyUT：模仿gtest实现的微型单元测试框架](cpp/tinyut)
