@@ -24,6 +24,7 @@
 2. [DEEPBIND方式加载so问题简化模型](cpp/deepbind)
 3. [gdb自定制变量打印](cpp/gdb-pretty-print)
 4. [shared_ptr循环引用导致内存泄漏](cpp/shared-ptr-cyclic-reference-memory-leak)
+4. [通过unix domain socket跨进程传递tcp socket](cpp/unix-domain-socket)
 
 ### misc
 1. [source insight头文件/源文件切换](misc/source-insight-switch-hpp-cpp)
