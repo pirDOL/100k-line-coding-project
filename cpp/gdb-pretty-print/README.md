@@ -49,6 +49,24 @@ $1 = std::vector of length 3, capacity 3 = {, , }
 $1 = std::vector of length 3, capacity 3 = {1, 2, 3}
 ```
 
+### example: gdb STL pretty-printer
+#### gcc version
+choose svn branch url according to gcc version, you can open url in web browser
+```
+cd /home/work/gdb/stl_pretty_printer
+svn co https://gcc.gnu.org/svn/gcc/branches/gcc-4_5-branch/libstdc++-v3/python/
+```
+
+~/.gdbinit
+```
+python
+import sys
+sys.path.insert(0, '/home/work/gdb/stl_pretty_printer/python')
+from libstdcxx.v6.printers import register_libstdcxx_printers
+register_libstdcxx_printers (None)
+end
+```
+
 ### reference
 1. [23.2.1 Python Commands](https://sourceware.org/gdb/onlinedocs/gdb/Python-Commands.html)
 1. [23.2.2.7 Writing a Pretty-Printer](https://sourceware.org/gdb/onlinedocs/gdb/Writing-a-Pretty_002dPrinter.html#Writing-a-Pretty_002dPrinter)
