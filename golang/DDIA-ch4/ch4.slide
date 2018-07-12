@@ -1,0 +1,113 @@
+DDIA-ch4 Encoding and Evolution
+psre-dev book club 2018 season1
+12 Jul 2018
+
+liduo04
+baidu
+
+* Outline
+
+- what is encoding&decoding
+- battery included: gob
+- ascii-oriented: json
+- cross language: pb
+
+* what is encoding&decoding
+
+- process memory: 
+    struct Student {
+        uint64 id;
+        string name;
+    }
+- file or network: byte sequence
+
+.image encoding_decoding.png _ 1000
+
+* battery included - golang encoding/gob
+.link https://github.com/pirDOL/kaka/blob/master/The-Go-Blog/Gobs-of-data.md Gobs of data by Rob Pike
+.play gob_demo.go
+
+* Gobs of data
+
+- when to use: Go-specific environment
+
+- goals: gobs end up looking like a sort of generalized, simplified protocol buffer
+    easy to use: reflection, not IDL/protoc
+    efficiency: binary
+    self-describing
+
+- on giant shoulders: protocal buffer
+    can't encode an integer or array at the top level
+    required field is costly to implement and brings maintenance problem
+    leave out default value, use Go's zero value instead
+
+* battery included - python pickle
+.code pickle_demo.py
+.image pickle.png _ 200
+
+* ascii-oriented: json
+
+- pros
+    human-readable: acsii
+    language-independent
+    support unicode: extend acsii
+
+- cons
+    big integer: javascript subset, 2^53
+    binary encoding: base64 33% larger
+    no comment
+
+* cross language: pb
+
+- message layout
+.image pb_message.jpg
+
+    key = (field_number << 3) | wire_type
+
+    Type Meaning       Used For
+    0    Varint        int32, int64, uint32, uint64, sint32, sint64, bool, enum
+    1    64-bit        fixed64, sfixed64, double
+    2    Length-delimi string, bytes, embedded messages, packed repeated fields
+    5    32-bit        fixed32, sfixed32, float
+
+* cross language: pb(continued)
+
+- varint
+
+    message Student {
+        required int32 id = 1;
+    }
+
+    Student t;
+    t.set_id(0x96)
+
+    \x08 \x96 \x01
+
+.image pb_varint.png _ 550
+
+* cross language: pb(continued)
+
+- varint encoding efficiency statistic
+
+    E(fixed32) = 4 bytes
+
+    E(int32) = 4.94 bytes
+
+    combination     [0,2^7)  [2^7,2^14) [2^14,2^21) [2^21,2^28) [2^28,2^32)
+    probability     2.98e-08 3.78e-6    0.0004      0.062       0.9375
+    expected value  1 byte   2 bytes    3 bytes     4 bytes     5bytes
+    
+
+* cross language: pb(continued2)
+
+- string
+    key | length(varint) | bytes
+
+- array
+    message Zoo {
+        repeated int32 animals = 1 [packed=true];
+    }
+
+    packed=false: key|element1|key|element2|...|
+
+    packed=true:  key|element bytes(varint)|element1|element2|...|
