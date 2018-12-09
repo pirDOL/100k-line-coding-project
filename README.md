@@ -18,6 +18,7 @@
 4. [flask中logging使用](python/flask-logging)
 5. [python操作mysql](python/mysql)
 6. [python多进程、多线程、协程](python/multiprocessing-threading-coroutine)
+7. [我用爬虫一天时间“偷了”知乎一百万用户，只为证明PHP是世界上最好的语言](https://github.com/owner888/phpspider)
 
 ### C++
 1. [tinyUT：模仿gtest实现的微型单元测试框架](cpp/tinyut)
